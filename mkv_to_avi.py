@@ -45,8 +45,8 @@ def main():
      mkv_file = sys.argv[1]
      
      if os.path.exists(mkv_file):
-        extension = arquivo[-3:]
-        size = os.path.getsize(arquivo)
+        extension = mkv_file[-3:]
+        size = os.path.getsize(mkv_file)
         
         if extension == 'mkv':
             info = {'file_name':mkv_file,'size':human_readable_size(size)}
