@@ -2,7 +2,7 @@
 """
   Script to monitor a replication slave server mysql
 
-  @author: Matheus Rosa <matheus.rosa@mltcorp.com.br>
+  @author: Matheus Rosa
   @date: 2013-01-10
 """
 from email.MIMEMultipart import MIMEMultipart
