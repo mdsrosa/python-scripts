@@ -11,21 +11,21 @@ import os
 
 
 def show_info(info):
-    '''Shows the basic information of the file'''
+    """Shows the basic information of the file"""
     
     print '=' * 100
-    print 'MKV File: ' + info['file_name']
-    print 'Size: ' + info['file_size']
+    print 'MKV File: %s' % info['file_name']
+    print 'Size: %s' %  info['file_size']
     print '=' * 100
 
 def show_help():
-    '''Shows how to use the script'''
+    """Shows how to use the script"""
     print 'MKV to AVI Converter by Matheus Rosa'
-    print 'Usage: ' + sys.argv[0] + ' mkv_file.mkv'
+    print 'Usage: %s mkv_file.mkv' % sys.argv[0]
     
 
 def human_readable_size(size):
-    '''Returns the size human readable formatted'''
+    """Returns the size human readable formatted"""
     
     suffixes = {1024: ['KiB', 'MiB', 'GiB', 'TiB', 'PiB', 'EiB', 'ZiB', 'YiB']}
     
@@ -34,7 +34,6 @@ def human_readable_size(size):
     
     for suffix in suffixes[1024]:
         size /= 1024
-        
         if size < 1024:
             return '{0:.1f} {1}'.format(size, suffix)
                 
@@ -54,12 +53,12 @@ def main():
             
             print 'Starting conversion ...'
             os.system('mencoder ' + mkv_file + ' -oac copy -ovc copy -o '+ mkv_file[:-4] + '.avi')
-            print 'Conversion completed!'
+            print 'Done.'
             
         else:
             print 'Invalid file. You need an MKV file to continue.'
      else:
-        print 'File does not exist'
+        print 'File %s not found.' % mkv_file
         
 if __name__ == '__main__':
     main()
